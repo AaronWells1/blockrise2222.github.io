@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlockRise Studios | Minecraft Builds</title>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" onclick="closeMenu()" class="active">
+                    <span class="nav-icon">🏠</span>
+                    <span>Home</span>
+                </a></li>
+                <li><a href="#portfolio" onclick="closeMenu()">
+                    <span class="nav-icon">💼</span>
+                    <span>Portfolio</span>
+                </a></li>
+                <li><a href="#services" onclick="closeMenu()">
+                    <span class="nav-icon">⚙️</span>
+                    <span>Services</span>
+                </a></li>
+                <li><a href="#reviews" onclick="closeMenu()">
+                    <span class="nav-icon">⭐</span>
+                    <span>Reviews</span>
+                </a></li>
+                <li><a href="#contact" onclick="closeMenu()">
+                    <span class="nav-icon">💬</span>
+                    <span>Contact</span>
+                </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="container">
+                <h1>Welcome to<br><span class="brand">BlockRise Studios</span></h1>
+                <p>BlockRise Studios brings your ideas to life—from charming homes to large-scale builds and custom maps. With nearly ten years of experience, our team is committed to delivering exceptional quality. Every project begins with a conversation, ensuring your vision is crafted with care, detail, and precision.</p>
+                <a href="#contact" class="cta-button">Get Started</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">↓</div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Recent Projects</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" onclick="openModal('Medieval Castle Complex', '', 'https://i.ibb.co/tPh56Yjt/20251205-091809.jpg', '🏰')">
+                    <img src="https://i.ibb.co/tPh56Yjt/20251205-091809.jpg" alt="Medieval Castle" class="portfolio-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="portfolio-placeholder" style="display: none;">🏰</div>
+                    <div class="portfolio-info">
+                    </div>
+                </div>
+                <div class="portfolio-item" onclick="openModal('Luxury Modern Villa', '', 'https://i.ibb.co/kgBKwytX/20251205-091813.jpg', '🏠')">
+                    <img src="https://i.ibb.co/kgBKwytX/20251205-091813.jpg" alt="Modern Villa" class="portfolio-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="portfolio-placeholder" style="display: none;">🏠</div>
+                    <div class="portfolio-info">
+
+                    </div>
+                </div>
+                <div class="portfolio-item" onclick="openModal('Enchanted Treehouse', '', 'https://i.ibb.co/9f1z10k/3c0b89238232477-6910e6588eca1.png', '🌳')">
+                    <img src="https://i.ibb.co/9f1z10k/3c0b89238232477-6910e6588eca1.png" alt="Enchanted Treehouse" class="portfolio-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="portfolio-placeholder" style="display: none;">🌳</div>
+                    <div class="portfolio-info">
+
+                    </div>
+                </div>
+                <div class="portfolio-item" onclick="openModal('Server Spawn Hub', 'Professional spawn area for a 500+ player server', 'https://i.ibb.co/PGS1kqqT/20251205-091826-1.jpg', '⭐')">
+                    <img src="https://i.ibb.co/PGS1kqqT/20251205-091826-1.jpg" alt="Server Hub" class="portfolio-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="portfolio-placeholder" style="display: none;">⭐</div>
+                    <div class="portfolio-info">
+
+                    </div>
+                </div>
+                <div class="portfolio-item" onclick="openModal('Steampunk District', 'Industrial-themed city area with Victorian aesthetics', 'https://i.ibb.co/PZBS9h2X/2025-11-26-15-53-14.png', '⚙️')">
+                    <img src="https://i.ibb.co/PZBS9h2X/2025-11-26-15-53-14.png" alt="Steampunk District" class="portfolio-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="portfolio-placeholder" style="display: none;">⚙️</div>
+                    <div class="portfolio-info">
+
+                    </div>
+                </div>
+                <div class="portfolio-item" onclick="openModal('Elven Settlement', 'Fantasy village integrated into natural forest environment', 'https://i.ibb.co/TBy75rmc/image-5.png', '🧝')">
+                    <img src="https://i.ibb.co/TBy75rmc/image-5.png" alt="Elven Settlement" class="portfolio-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="portfolio-placeholder" style="display: none;">🧝</div>
+                    <div class="portfolio-info">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>🗺️ Server Spawns</h3>
+                    <p>Impressive spawn areas and hub designs for servers</p>
+                </div>
+                <div class="service-card">
+                    <h3>🎨 Custom Designs</h3>
+                    <p>Unique builds tailored to your specific vision</p>
+                </div>
+                <div class="service-card">
+                    <h3>⚡ Anything you can Imagine</h3>
+                    <p>Our team at BlockRise Studios will build anything you can imagine!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Order a Build!</h2>
+            <div class="discord-cta">
+                <p>Ready to bring your Minecraft vision to life? Join our Discord server to discuss your project, get quotes, and see our latest work!</p>
+                <a href="https://discord.gg/Fft9gDZHDF" target="_blank" class="discord-button">
+                    <span class="discord-icon">💬</span>
+                    <span>Join Our Discord!</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 BlockRise Builds. Crafting excellence, one block at a time.</p>
+        </div>
+    </footer>
+
+    <div id="image-overlay" class="image-overlay" onclick="collapseImage()"></div>
+    
+    <div id="modal" class="modal" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <h2 id="modal-title"></h2>
+            <img id="modal-img" class="modal-image" style="display: none;" alt="Project image" onclick="expandImage(event)">
+            <div id="modal-placeholder" class="modal-placeholder" style="display: none;"></div>
+            <p id="modal-description"></p>
+            <button class="close-modal" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+
+</body>
+</html>
