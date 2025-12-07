@@ -3,607 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlockRise Studios | Minecraft Builds</title>
-
+    <title>VKFBuilds | Minecraft Builder Portfolio</title>
 </head>
-<style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            line-height: 1.6;
-            color: #e0e0e0;
-            background: #0a0e27;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-
-       
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: linear-gradient(180deg, #0a0e27 0%, #1a1f3a 100%);
-            position: relative;
-            padding: 120px 0;
-        }
-
-  .red-text {
-    color: red;
-  }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
-                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
-            opacity: 0.4;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            color: #fff;
-            letter-spacing: -1px;
-            line-height: 1.1;
-        }
-
-        .hero .brand {
-            color: #00d4ff;
-            text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
-        }
-
-        .hero p {
-            font-size: 1.15rem;
-            margin-bottom: 3rem;
-            color: #b0b0b0;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.8;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 16px 48px;
-            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
-            color: #fff;
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.4);
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 2rem;
-            color: #00d4ff;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-            40% { transform: translateX(-50%) translateY(-10px); }
-            60% { transform: translateX(-50%) translateY(-5px); }
-        }
-
-        /* Section Styles */
-        section {
-            padding: 100px 0;
-            position: relative;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 4rem;
-            color: #fff;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        /* Portfolio Section */
-        .portfolio {
-            background: #0f1329;
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .portfolio-item {
-            background: #1a1f3a;
-            overflow: hidden;
-            transition: all 0.3s;
-            cursor: pointer;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            position: relative;
-        }
-
-        .portfolio-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 153, 204, 0.1) 100%);
-            opacity: 0;
-            transition: opacity 0.3s;
-            z-index: 1;
-        }
-
-        .portfolio-item:hover::before {
-            opacity: 1;
-        }
-
-        .portfolio-item:hover {
-            transform: translateY(-8px);
-            border-color: rgba(0, 212, 255, 0.3);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-        }
-
-        .portfolio-image {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            display: block;
-        }
-        
-        .portfolio-placeholder {
-            width: 100%;
-            height: 280px;
-            background: linear-gradient(135deg, #1a1f3a 0%, #252b4a 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #00d4ff;
-            font-size: 3rem;
-        }
-
-        .portfolio-info {
-            padding: 2rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .portfolio-info h3 {
-            color: #fff;
-            margin-bottom: 0.5rem;
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
-
-        .portfolio-info p {
-            color: #a0a0a0;
-            font-size: 0.95rem;
-        }
-
-        /* Services Section */
-        .services {
-            background: #0a0e27;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: #1a1f3a;
-            padding: 3rem 2rem;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #00d4ff, transparent);
-            transition: left 0.5s;
-        }
-
-        .service-card:hover::before {
-            left: 100%;
-        }
-
-        .service-card:hover {
-            border-color: rgba(0, 212, 255, 0.3);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .service-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-            color: #fff;
-        }
-
-        .service-card p {
-            color: #b0b0b0;
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        /* Reviews Section */
-        .reviews {
-            background: #0f1329;
-        }
-
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .review-card {
-            background: #1a1f3a;
-            padding: 2.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-left: 3px solid #00d4ff;
-            transition: all 0.3s;
-        }
-
-        .review-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
-        }
-
-        .stars {
-            color: #00d4ff;
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            letter-spacing: 3px;
-        }
-
-        .review-text {
-            color: #c0c0c0;
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-
-        .reviewer {
-            font-size: 0.9rem;
-            color: #00d4ff;
-            font-weight: 600;
-        }
-
-        /* Contact Section */
-        .contact {
-            background: linear-gradient(180deg, #0a0e27 0%, #1a1f3a 100%);
-            padding: 120px 0;
-            text-align: center;
-        }
-
-        .discord-cta {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .discord-cta p {
-            font-size: 1.1rem;
-            color: #b0b0b0;
-            margin-bottom: 2rem;
-            line-height: 1.8;
-        }
-
-        .discord-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 20px 50px;
-            background: linear-gradient(135deg, #5865F2 0%, #4752C4 100%);
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            transition: all 0.3s;
-            box-shadow: 0 10px 40px rgba(88, 101, 242, 0.4);
-            border-radius: 8px;
-        }
-
-        .discord-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 50px rgba(88, 101, 242, 0.6);
-        }
-
-        .discord-icon {
-            font-size: 2rem;
-        }
-
-        /* Footer */
-        footer {
-            background: #0a0e27;
-            color: #666;
-            text-align: center;
-            padding: 2.5rem 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            font-size: 0.9rem;
-        }
-
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            justify-content: center;
-            align-items: center;
-            padding: 40px;
-        }
-
-        .modal-content {
-            background: #1a1f3a;
-            padding: 3rem;
-            max-width: 900px;
-            max-height: 90vh;
-            overflow-y: auto;
-            text-align: center;
-            position: relative;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .modal-content h2 {
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #fff;
-        }
-        
-        .modal-image {
-            width: 100%;
-            max-height: 60vh;
-            object-fit: contain;
-            margin: 2rem 0;
-            cursor: zoom-in;
-            transition: all 0.3s;
-        }
-        
-        .modal-image:hover {
-            opacity: 0.9;
-        }
-        
-        .modal-image.expanded {
-            position: fixed !important;
-            top: 50% !important;
-            left: 50% !important;
-            transform: translate(-50%, -50%) !important;
-            max-width: 90vw !important;
-            max-height: 90vh !important;
-            width: auto !important;
-            height: auto !important;
-            z-index: 3000 !important;
-            cursor: zoom-out !important;
-            margin: 0 !important;
-        }
-        
-        .modal-image.expanded:hover {
-            opacity: 1 !important;
-        }
-        
-        .image-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.98);
-            z-index: 2999;
-            cursor: zoom-out;
-        }
-        
-        .image-overlay.active {
-            display: block;
-        }
-        
-        .modal-placeholder {
-            width: 100%;
-            height: 400px;
-            background: linear-gradient(135deg, #1a1f3a 0%, #252b4a 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #00d4ff;
-            font-size: 4rem;
-            margin: 2rem 0;
-        }
-        
-        .modal-content p {
-            color: #b0b0b0;
-            font-size: 1.05rem;
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-
-        .close-modal {
-            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
-            color: #fff;
-            border: none;
-            padding: 14px 40px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            transition: all 0.3s;
-        }
-
-        .close-modal:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 24px;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero {
-                min-height: 80vh;
-                padding: 100px 0;
-            }
-
-            nav {
-                padding: 1rem 1.5rem;
-                width: calc(100% - 40px);
-                max-width: none;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .nav-links {
-                position: fixed;
-                left: 0;
-                bottom: -100%;
-                flex-direction: row;
-                background: rgba(26, 31, 58, 0.98);
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(0, 212, 255, 0.1);
-                width: calc(100% - 40px);
-                margin: 0 20px;
-                text-align: center;
-                transition: bottom 0.3s ease-in-out;
-                padding: 1rem 0.5rem;
-                border-radius: 50px;
-                box-shadow: 0 -8px 32px rgba(0, 212, 255, 0.2);
-                gap: 0.5rem;
-                overflow-x: auto;
-            }
-
-            .nav-links.active {
-                bottom: 20px;
-            }
-
-            .nav-links li {
-                margin: 0;
-                flex-shrink: 0;
-            }
-
-            .nav-links a {
-                font-size: 0.75rem;
-                gap: 0.2rem;
-            }
-
-            .nav-icon {
-                font-size: 1.3rem;
-            }
-
-            .services-grid,
-            .reviews-grid,
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .modal {
-                padding: 20px;
-            }
-
-            .modal-content {
-                padding: 2rem;
-            }
-
-            section {
-                padding: 60px 0;
-            }
-        }
-</style>
 <body>
 
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="container">
-                <h1>Welcome to<br><span class="brand">VKFBuilds's Portfolio</span></h1>
-<p>Hello, my name is Aaron 👋
-I've been creating builds on Minecraft sense 2017! And my goal is to create top-tier Minecraft builds for people at non-expensive prices! I currently am an owner and builder at an MC Building Service named BlockRise. <span class="red-text">I DO NOT Volunteer Build.</span></p>
-                <a href="#contact" class="cta-button">Get Started</a>
+                <h1>Welcome to<br><span class="brand">VKFBuilds</span></h1>
+                <p>Professional Minecraft builder specializing in <strong>server spawns</strong> and <strong>epic arenas</strong>. From competitive PvP arenas to stunning spawn lobbies, I can bring <strong>any</strong> immersive idea to life. <span class="red-text">Commission-based builds only - no free work.</span></p>
+                <a href="#contact" class="cta-button">Commission a Build</a>
             </div>
         </div>
         <div class="scroll-indicator">↓</div>
     </section>
 
+    <section id="specialties" class="specialties">
+        <div class="container">
+            <h2 class="section-title">What I Specialize In</h2>
+            <p class="section-subtitle">My core expertise in Minecraft building</p>
+            <div class="specialties-grid">
+                <div class="specialty-card">
+                    <div class="specialty-icon">🏛️</div>
+                    <h3>Server Spawns</h3>
+                    <p>Create unforgettable first impressions with custom spawn lobbies and hubs that set the tone for your entire server. From grand medieval castles to futuristic cityscapes.</p>
+                </div>
+                <div class="specialty-card">
+                    <div class="specialty-icon">⚔️</div>
+                    <h3>PvP Arenas</h3>
+                    <p>Design competitive battle arenas optimized for gameplay and aesthetics. Whether it's dueling rings, team battlegrounds, or tournament venues, I build arenas that players remember.</p>
+                </div>
+                <div class="specialty-card">
+                    <div class="specialty-icon">🎯</div>
+                    <h3>Custom Builds</h3>
+                    <p>Versatile builder capable of bringing any vision to life. Medieval fortresses, modern cities, fantasy realms - if you can imagine it, I can build it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="portfolio" class="portfolio">
         <div class="container">
-            <h2 class="section-title">Recent Projects</h2>
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">A showcase of my recent work</p>
             <div class="portfolio-grid">
-                <div class="portfolio-item" onclick="openModal('', '', 'https://i.ibb.co/WppFLV0V/2025-11-26-15-53-14.png', '🏰')">
+                <div class="portfolio-item" onclick="openModal('Japanease Spawn', 'https://i.ibb.co/WppFLV0V/2025-11-26-15-53-14.png', '🏰')">
                     <img src="https://i.ibb.co/WppFLV0V/2025-11-26-15-53-14.png" alt="Medieval Castle" class="portfolio-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                     <div class="portfolio-placeholder" style="display: none;">🏰</div>
                     <div class="portfolio-info">
+                        <h3>Japanease Spawn</h3>
+                        <span class="portfolio-tag">Spawn</span>
                     </div>
                 </div>
-                <div class="portfolio-item" onclick="openModal('', '', 'https://i.ibb.co/spTc7ywd/2025-12-06-15-42-41.png', '🏠')">
-                    <img src="https://i.ibb.co/spTc7ywd/2025-12-06-15-42-41.png" alt="Modern Villa" class="portfolio-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="portfolio-placeholder" style="display: none;">🏠</div>
+                <div class="portfolio-item" onclick="openModal('Abandoned Cityscape', 'https://i.ibb.co/spTc7ywd/2025-12-06-15-42-41.png', '🏟️')">
+                    <img src="https://i.ibb.co/spTc7ywd/2025-12-06-15-42-41.png" alt="Modern Arena" class="portfolio-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="portfolio-placeholder" style="display: none;">🏟️</div>
                     <div class="portfolio-info">
-
+                        <h3>Abandoned Cityscape</h3>
+                        <span class="portfolio-tag">Cityscape</span>
                     </div>
                 </div>
-                <div class="portfolio-item" onclick="openModal('', '', 'https://i.ibb.co/39gTp4Pb/19352182-l.webp', '🌳')">
-                    <img src="https://i.ibb.co/39gTp4Pb/19352182-l.webp" alt="Enchanted Treehouse" class="portfolio-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="portfolio-placeholder" style="display: none;">🌳</div>
+                <div class="portfolio-item" onclick="openModal('Christmas Skywars Map', 'https://i.ibb.co/39gTp4Pb/19352182-l.webp', '✨')">
+                    <img src="https://i.ibb.co/39gTp4Pb/19352182-l.webp" alt="Fantasy Hub" class="portfolio-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="portfolio-placeholder" style="display: none;">✨</div>
                     <div class="portfolio-info">
-
+                        <h3>Christmas Skywars Map</h3>
+                        <span class="portfolio-tag">Skywars Map</span>
                     </div>
-                </div>
                 </div>
             </div>
         </div>
@@ -611,36 +77,45 @@ I've been creating builds on Minecraft sense 2017! And my goal is to create top-
 
     <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title">Services</h2>
+            <h2 class="section-title">Services Offered</h2>
+            <p class="section-subtitle">Professional Minecraft building for all server needs</p>
             <div class="services-grid">
                 <div class="service-card">
-                    <h3>🗺️ Server Spawns</h3>
-                    <p>Impressive spawn areas and hub designs for servers</p>
+                    <h3>🏛️ Server Spawns & Hubs</h3>
+                    <p>Custom spawn areas that welcome players to your world</p>
+                </div>
+                <div class="service-card">
+                    <h3>⚔️ PvP & Battle Arenas</h3>
+                    <p>Competitive arenas designed for intense gameplay</p>
+                </div>
+                <div class="service-card">
+                    <h3>🎪 Event Venues</h3>
+                    <p>Special event spaces for tournaments and gatherings</p>
+                </div>
+                <div class="service-card">
+                    <h3>🏰 Themed Builds</h3>
+                    <p>Medieval, fantasy, modern, or sci-fi themed structures</p>
                 </div>
                 <div class="service-card">
                     <h3>🎨 Custom Designs</h3>
-                    <p>Unique builds tailored to your specific vision</p>
+                    <p>Unique builds tailored to your exact specifications</p>
                 </div>
                 <div class="service-card">
-                    <h3>⚡ Anything you can Imagine</h3>
-                    <p>Our team at BlockRise Studios will build anything you can imagine!</p>
+                    <h3>🌍 Server Infrastructure</h3>
+                    <p>Complete server build packages and map design</p>
                 </div>
-              
             </div>
         </div>
-      
     </section>
-
-   
 
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Order a Build!</h2>
+            <h2 class="section-title">Ready to Build?</h2>
             <div class="discord-cta">
-                <p>Ready to bring your Minecraft vision to life? <span class="red-text">Add me on discord at "VKFBuilds"</span></p>
+                <p>Let's discuss your project and bring your Minecraft vision to life. <span class="red-text">Contact me on Discord: VKFBuilds</span></p>
                 <a href="https://discord.com/users/749495796344422451" target="_blank" class="discord-button">
                     <span class="discord-icon">💬</span>
-                    <span>Click me to contact me on discord!</span>
+                    <span>Message Me on Discord</span>
                 </a>
             </div>
         </div>
@@ -648,48 +123,24 @@ I've been creating builds on Minecraft sense 2017! And my goal is to create top-
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 BlockRise Builds. Crafting excellence, one block at a time.</p>
+            <p>&copy; 2025 VKFBuilds. Professional Minecraft builder - Spawns & Arenas specialist.</p>
         </div>
     </footer>
 
-    <div id="image-overlay" class="image-overlay" onclick="collapseImage()"></div>
-    
     <div id="modal" class="modal" onclick="closeModal()">
         <div class="modal-content" onclick="event.stopPropagation()">
             <h2 id="modal-title"></h2>
-            <img id="modal-img" class="modal-image" style="display: none;" alt="Project image" onclick="expandImage(event)">
+            <img id="modal-img" class="modal-image" style="display: none;" alt="Project image">
             <div id="modal-placeholder" class="modal-placeholder" style="display: none;"></div>
             <p id="modal-description"></p>
             <button class="close-modal" onclick="closeModal()">Close</button>
         </div>
     </div>
+
 <script>
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            const hamburger = document.querySelector('.hamburger');
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        }
-
-        function closeMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            const hamburger = document.querySelector('.hamburger');
-            navLinks.classList.remove('active');
-            hamburger.classList.remove('active');
-        }
-
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
-                // Remove active class from all nav links
-                document.querySelectorAll('.nav-links a').forEach(link => {
-                    link.classList.remove('active');
-                });
-                
-                // Add active class to clicked link
-                this.classList.add('active');
-                
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -725,41 +176,8 @@ I've been creating builds on Minecraft sense 2017! And my goal is to create top-
 
         function closeModal() {
             document.getElementById('modal').style.display = 'none';
-            collapseImage();
-        }
-
-        function expandImage(event) {
-            event.stopPropagation();
-            const img = document.getElementById('modal-img');
-            const overlay = document.getElementById('image-overlay');
-            const modal = document.getElementById('modal');
-            
-            if (!img.classList.contains('expanded')) {
-                img.classList.add('expanded');
-                overlay.classList.add('active');
-                modal.style.pointerEvents = 'none';
-            } else {
-                collapseImage();
-            }
-        }
-
-        function collapseImage() {
-            const img = document.getElementById('modal-img');
-            const overlay = document.getElementById('image-overlay');
-            const modal = document.getElementById('modal');
-            
-            img.classList.remove('expanded');
-            overlay.classList.remove('active');
-            modal.style.pointerEvents = 'auto';
-        }
-
-        function handleSubmit(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
-            e.target.reset();
         }
 </script>
-
 
 </body>
 </html>
